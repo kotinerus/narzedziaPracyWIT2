@@ -13,7 +13,12 @@ function menu(){
 				today=$(date +'%d/%m/%Y');echo "Dziś jest: ${today}">>log${i}.txt
 
 			done;;
-
+	"--help")
+		echo ""
+		echo "--date - Wypisuje dzisiejszą datę"
+		echo "--logs n - Tworzy n kolejnych plików"
+		echo "--help - Wyświetla wszystkie kmendy"
+		echo ""
 	esac
 }
 menu "$1" "$2"
