@@ -4,7 +4,7 @@ function menu(){
 	case "$wartosc" in
 	"--date") today=$(date +'%d/%m/%Y');echo "Dziś jest: ${today}" ;;
 	"--logs")
-		for i in {1..100}
+		for i in $(seq 1 $2)
 			do
 
 				echo "Utworzony przez: skrypt.sh --logs">log${i}.txt
@@ -13,6 +13,7 @@ function menu(){
 				today=$(date +'%d/%m/%Y');echo "Dziś jest: ${today}">>log${i}.txt
 
 			done;;
+
 	esac
 }
-menu "$1"
+menu "$1" "$2"
