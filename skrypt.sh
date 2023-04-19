@@ -2,8 +2,10 @@
 function menu(){
 	wartosc=$1
 	case "$wartosc" in
-	"--date") today=$(date +'%d/%m/%Y');echo "Dziś jest: ${today}" ;;
-	"--logs")
+	"--date"|"-d") 
+				today=$(date +'%d/%m/%Y')
+				echo "Dziś jest: ${today}" ;;
+	"--logs"|"-l")
 		for i in $(seq 1 $2)
 			do
 
@@ -13,11 +15,11 @@ function menu(){
 				today=$(date +'%d/%m/%Y');echo "Dziś jest: ${today}">>log${i}.txt
 
 			done;;
-	"--help")
+	"--help"|"-h")
 		echo ""
-		echo "--date - Wypisuje dzisiejszą datę"
-		echo "--logs n - Tworzy n kolejnych plików"
-		echo "--help - Wyświetla wszystkie kmendy"
+		echo "--date lub -d - Wypisuje dzisiejszą datę"
+		echo "--logs n lub -l n - Tworzy n kolejnych plików"
+		echo "--help - lub -h Wyświetla wszystkie kmendy"
 		echo ""
 	esac
 }
